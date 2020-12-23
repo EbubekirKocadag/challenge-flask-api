@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from form import RegistrationForm, LoginForm
+from form import LoginForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY']="kbfvizrguzourgu"

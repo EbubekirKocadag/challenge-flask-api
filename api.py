@@ -1,6 +1,9 @@
 from flask import Flask, render_template, flash, url_for, redirect
 from form import LoginForm
 
+from datetime import datetime
+import random
+
 '''With wtforms, we have to configure a secret_key, here we just hard code it but normaly we shouldn't'''
 app = Flask(__name__)
 app.config['SECRET_KEY']="kbfvizrguzourgu"
@@ -10,7 +13,7 @@ app.config['SECRET_KEY']="kbfvizrguzourgu"
 def index():
     '''Here we configure the url path, and with we return a html, it's the same with other functions'''
 
-    return render_template('index.html', message="Hello")
+    return render_template('index.html', message="Hello !")
 
 @app.route('/status')   #get
 def status():
@@ -28,13 +31,21 @@ def login():
         return redirect(url_for('index'))
     return render_template('login.html', form=form)
 
-@app.route('/predict')    #get
+@app.route('/predict', methods=['GET', 'POST'])    #get
 def predict():
     '''Here the function will just display month, custumor visiting website, seller available and a prediction between
     2000 and 5000'''
 
+    mydate = datetime.now()
+    month = mydate.strftime("%B")
 
-    return render_template('predict.html', month='', custumor_visiting_website='', seller_available='', prediction='')
+    custumors = 100
+
+    sellers = 12
+
+    predict = random.randint(2000, 5000)
+
+    return render_template('predict.html', month=month, custumor_visiting_website= custumors, seller_available=sellers, prediction=predict)
 
 if __name__ == '__main__':
    app.run(debug=True)

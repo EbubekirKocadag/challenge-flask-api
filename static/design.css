@@ -53,15 +53,11 @@ fieldset {
         color: rgb(255, 255, 255);
         font-weight: bold;
     }
-h1{
-
-}
-.alert {
-
+h3{
+    color:white;
+    padding: 10px;
 }
 .alert-success {
-
-}
-.alert-fail {
-
+    background: seagreen;
+    color: springgreen;
 }

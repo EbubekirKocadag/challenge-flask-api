@@ -2,7 +2,7 @@ from flask import Flask, render_template, flash, url_for, redirect, request
 from form import LoginForm
 
 from datetime import datetime
-import random
+import random, os
 
 '''With wtforms, we have to configure a secret_key, here we just hard code it but normaly we shouldn't'''
 app = Flask(__name__)
@@ -48,4 +48,5 @@ def predict():
     return render_template('predict.html', month=month, custumor_visiting_website= custumors, seller_available=sellers, prediction=predict)
 
 if __name__ == '__main__':
-   app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)

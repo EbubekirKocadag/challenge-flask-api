@@ -20,7 +20,7 @@ Then you have to import flask with `from flask import Flask`. After that, we men
 After testing and doing our design we create a Dockerfile and create the image then we deploy the API on Heroku.
 To deploy On Heroku, first we need to install where our application is (you can find it on documentation on the website). After that, we do these following operations:
 
-    /heroku conatiner:login
+     heroku conatiner:login
      heroku create
      heroku container:push web
      heroku container:push web --app name-of-your-app

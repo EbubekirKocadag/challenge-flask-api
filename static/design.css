@@ -53,10 +53,33 @@ fieldset {
         color: rgb(255, 255, 255);
         font-weight: bold;
     }
+
+#predict_label{
+    width: calc(20% - 2px);
+    display: inline-block;
+}
+#predict{
+    width: calc(80% - 2px);
+    display: inline-block;
+}
+
 h3{
     color:white;
     padding: 10px;
+    width: 100%;
+    display: inline-block;
+    font-size: large;
+    font-weight: bold;
 }
+h4{
+    color:white;
+    padding: 10px;
+    width: 100%;
+    display: inline-block;
+    font-size: large;
+    font-weight: lighter;
+}
+
 .alert-success {
     background: seagreen;
     color: springgreen;
